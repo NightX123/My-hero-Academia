@@ -1,0 +1,25 @@
+// DM Environment file for Project Academia.dme.
+// All manual changes should be made outside the BEGIN_ and END_ blocks.
+// New source code should be placed in .dm files: choose File/New --> Code File.
+
+// BEGIN_INTERNALS
+// END_INTERNALS
+
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+
+// BEGIN_PREFERENCES
+// END_PREFERENCES
+
+// BEGIN_INCLUDE
+#include "[0.01]Rolling System.dm"
+#include "[0.02]Skills&Transformations.dm"
+#include "[0.03]Roleplay Mechanics.dm"
+#include "[0.04]Variables.dm"
+#include "[0.05]Reading&Handling Perks.dm"
+#include "Project Academia.dm"
+#include "Main.dmf"
+#include "Interface Commands\[0.01]Fade.dm"
+// END_INCLUDE
+

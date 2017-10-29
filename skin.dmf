@@ -1,0 +1,1665 @@
+macro "macro"
+	elem 
+		name = "CENTER+REP"
+		command = ".center"
+	elem 
+		name = "NORTHEAST+REP"
+		command = ".northeast"
+	elem 
+		name = "SOUTHEAST+REP"
+		command = ".southeast"
+	elem 
+		name = "SOUTHWEST+REP"
+		command = ".southwest"
+	elem 
+		name = "NORTHWEST+REP"
+		command = ".northwest"
+	elem 
+		name = "CTRL+WEST"
+		command = "TurnW"
+	elem 
+		name = "WEST+REP"
+		command = ".west"
+	elem 
+		name = "CTRL+NORTH"
+		command = "TurnN"
+	elem 
+		name = "NORTH+REP"
+		command = ".north"
+	elem 
+		name = "CTRL+EAST"
+		command = "TurnE"
+	elem 
+		name = "EAST+REP"
+		command = ".east"
+	elem 
+		name = "CTRL+SOUTH"
+		command = "TurnS"
+	elem 
+		name = "SOUTH+REP"
+		command = ".south"
+
+
+menu "menu"
+	elem 
+		name = "&File"
+		command = ""
+		saved-params = "is-checked"
+	elem 
+		name = "&Options and Messages...\tF1"
+		command = ".options"
+		category = "&File"
+		saved-params = "is-checked"
+	elem "Optionsmenu"
+		name = "&Game Options\tF3"
+		command = "Options"
+		category = "&File"
+		saved-params = "is-checked"
+	elem 
+		name = "Browse"
+		command = "<< browse"
+		category = "&File"
+		group = "browse"
+		saved-params = "is-checked"
+	elem 
+		name = "&Quit"
+		command = ".quit"
+		category = "&File"
+		saved-params = "is-checked"
+	elem 
+		name = "Icons"
+		command = ""
+		saved-params = "is-checked"
+	elem "icon32"
+		name = "&16x16"
+		command = ".winset \"Map.map.icon-size=16\""
+		category = "Icons"
+		can-check = true
+		group = "size"
+		saved-params = "is-checked"
+	elem "icon32"
+		name = "&32x32"
+		command = ".winset \"Map.map.icon-size=32\""
+		category = "Icons"
+		can-check = true
+		group = "size"
+		saved-params = "is-checked"
+	elem 
+		name = "&64x64"
+		command = ".winset \"Map.map.icon-size=64\""
+		category = "Icons"
+		saved-params = "is-checked"
+
+
+window "Container"
+	elem "Container"
+		type = MAIN
+		pos = 281,0
+		size = 600x415
+		anchor1 = none
+		anchor2 = none
+		background-color = #2c2c2c
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		image-mode = tile
+	elem "button5"
+		type = BUTTON
+		pos = 560,8
+		size = 32x16
+		anchor1 = 93,2
+		anchor2 = 99,6
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #404040
+		border = line
+		saved-params = "is-checked"
+		text = "X"
+		command = "CloseContainer"
+		is-flat = true
+	elem "ContainerName"
+		type = LABEL
+		pos = 8,8
+		size = 544x16
+		anchor1 = 1,2
+		anchor2 = 92,6
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #4d4d4d
+		border = line
+		saved-params = ""
+		text = "Container"
+	elem "Grid"
+		type = GRID
+		pos = 8,32
+		size = 584x376
+		anchor1 = 1,8
+		anchor2 = 99,98
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #404040
+		border = line
+		saved-params = ""
+		link-color = #0080ff
+		visited-color = #93a7bd
+		highlight-color = #000000
+
+window "CookGrid"
+	elem "CookGrid"
+		type = MAIN
+		pos = 281,0
+		size = 600x600
+		anchor1 = none
+		anchor2 = none
+		background-color = #2c2c2c
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		image-mode = tile
+	elem "button5"
+		type = BUTTON
+		pos = 571,8
+		size = 21x16
+		anchor1 = 95,1
+		anchor2 = 99,4
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #753333
+		border = line
+		saved-params = "is-checked"
+		text = "X"
+		command = "CookFinish"
+		is-flat = true
+	elem "label12"
+		type = LABEL
+		pos = 8,8
+		size = 560x16
+		anchor1 = 1,1
+		anchor2 = 95,4
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #404040
+		border = line
+		saved-params = ""
+		text = "Your Recipe Booklet"
+	elem "Grid"
+		type = GRID
+		pos = 8,28
+		size = 584x564
+		anchor1 = 1,5
+		anchor2 = 99,99
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #404040
+		border = line
+		saved-params = ""
+		link-color = #0080ff
+		visited-color = #93a7bd
+		highlight-color = #000000
+
+window "Info"
+	elem "Info"
+		type = MAIN
+		pos = 281,0
+		size = 642x485
+		anchor1 = none
+		anchor2 = none
+		background-color = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+		transparent-color = #2c2c2c
+	elem "info2"
+		type = INFO
+		pos = 690,0
+		size = 336x563
+		anchor1 = 67,0
+		anchor2 = 100,70
+		font-family = "Calibri"
+		text-color = #ffffff
+		background-color = #3b3b3b
+		saved-params = ""
+		tab-text-color = #ffffff
+		tab-background-color = #753333
+		tab-font-family = "Calibri"
+	elem "Info"
+		type = INFO
+		pos = 0,0
+		size = 642x485
+		anchor1 = 0,0
+		anchor2 = 100,100
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #404040
+		is-default = true
+		saved-params = ""
+		highlight-color = #0080ff
+		tab-text-color = #ffffff
+		tab-background-color = #303030
+		tab-font-family = "Verdana"
+		tab-font-size = 8
+
+window "Map"
+	elem "Map"
+		type = MAIN
+		pos = 281,0
+		size = 472x351
+		anchor1 = none
+		anchor2 = none
+		background-color = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+	elem "map"
+		type = MAP
+		pos = 0,0
+		size = 472x351
+		anchor1 = 0,0
+		anchor2 = 100,100
+		text-color = #000000
+		is-default = true
+		border = line
+		saved-params = "icon-size"
+
+window "Preview"
+	elem "Preview"
+		type = MAIN
+		pos = 281,0
+		size = 881x623
+		anchor1 = none
+		anchor2 = none
+		background-color = #2c2c2c
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		image-mode = tile
+	elem "Preview"
+		type = GRID
+		pos = 544,40
+		size = 328x576
+		anchor1 = 62,6
+		anchor2 = 99,99
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #404040
+		border = line
+		saved-params = ""
+		show-names = false
+		link-color = #0080ff
+		visited-color = #93a7bd
+	elem "button5"
+		type = BUTTON
+		pos = 816,11
+		size = 56x21
+		anchor1 = 93,2
+		anchor2 = 99,5
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #753333
+		border = line
+		saved-params = "is-checked"
+		text = "X"
+		command = "CloseContainer"
+		is-flat = true
+	elem "ContainerName"
+		type = LABEL
+		pos = 8,11
+		size = 800x21
+		anchor1 = 1,2
+		anchor2 = 92,5
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #404040
+		border = line
+		saved-params = ""
+		text = "Preview"
+	elem "Grid"
+		type = GRID
+		pos = 8,40
+		size = 528x576
+		anchor1 = 1,6
+		anchor2 = 61,99
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #404040
+		border = line
+		saved-params = ""
+		link-color = #0080ff
+		visited-color = #93a7bd
+
+window "Profile"
+	elem "Profile"
+		type = MAIN
+		pos = 281,0
+		size = 584x438
+		anchor1 = none
+		anchor2 = none
+		background-color = #2c2c2c
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		statusbar = false
+	elem "AgeOut"
+		type = OUTPUT
+		pos = 158,415
+		size = 85x17
+		anchor1 = 27,95
+		anchor2 = 42,99
+		font-family = "Verdana"
+		font-size = 7
+		text-color = #ffffff
+		background-color = #3b3b3b
+		border = line
+		saved-params = "max-lines"
+	elem "label7"
+		type = LABEL
+		pos = 123,415
+		size = 35x17
+		anchor1 = 21,95
+		anchor2 = 27,99
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #aaaaaa
+		border = line
+		saved-params = ""
+		text = "Age"
+	elem "BloodOut"
+		type = OUTPUT
+		pos = 274,415
+		size = 75x17
+		anchor1 = 47,95
+		anchor2 = 60,99
+		font-family = "Verdana"
+		font-size = 7
+		text-color = #ffffff
+		background-color = #3b3b3b
+		border = line
+		saved-params = "max-lines"
+	elem "label2"
+		type = LABEL
+		pos = 239,415
+		size = 35x17
+		anchor1 = 41,95
+		anchor2 = 47,99
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #aaaaaa
+		border = line
+		saved-params = ""
+		text = "Blood"
+	elem "StatOutput"
+		type = OUTPUT
+		pos = 9,9
+		size = 102x423
+		anchor1 = 2,2
+		anchor2 = 19,99
+		font-family = "Verdana"
+		font-size = 7
+		text-color = #ffffff
+		background-color = #2c2c2c
+		border = line
+		saved-params = "max-lines"
+	elem "WeightOut"
+		type = OUTPUT
+		pos = 384,415
+		size = 83x17
+		anchor1 = 66,95
+		anchor2 = 80,99
+		font-family = "Verdana"
+		font-size = 7
+		text-color = #ffffff
+		background-color = #3b3b3b
+		border = line
+		saved-params = "max-lines"
+	elem "HeightOut"
+		type = OUTPUT
+		pos = 502,415
+		size = 75x17
+		anchor1 = 86,95
+		anchor2 = 99,99
+		font-family = "Verdana"
+		font-size = 7
+		text-color = #ffffff
+		background-color = #3b3b3b
+		border = line
+		saved-params = "max-lines"
+	elem "label6"
+		type = LABEL
+		pos = 349,415
+		size = 35x17
+		anchor1 = 60,95
+		anchor2 = 66,99
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #aaaaaa
+		border = line
+		saved-params = ""
+		text = "Weight"
+	elem "label3"
+		type = LABEL
+		pos = 467,415
+		size = 35x17
+		anchor1 = 80,95
+		anchor2 = 86,99
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #aaaaaa
+		border = line
+		saved-params = ""
+		text = "Height"
+	elem "ProfileBrowse"
+		type = BROWSER
+		pos = 121,9
+		size = 456x397
+		anchor1 = 21,2
+		anchor2 = 99,93
+		background-color = #2c2c2c
+		border = sunken
+		saved-params = ""
+
+window "RewardLog"
+	elem "RewardLog"
+		type = MAIN
+		pos = 281,0
+		size = 600x600
+		anchor1 = none
+		anchor2 = none
+		background-color = #2c2c2c
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		image-mode = tile
+	elem "button14"
+		type = BUTTON
+		pos = 88,576
+		size = 264x16
+		anchor1 = 15,96
+		anchor2 = 59,99
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #8a851e
+		border = line
+		saved-params = "is-checked"
+		text = "Progression Guide"
+		command = "http://erashinobionline.wikia.com/wiki/Progression"
+		is-flat = true
+	elem "button11"
+		type = BUTTON
+		pos = 8,576
+		size = 80x16
+		anchor1 = 1,96
+		anchor2 = 15,99
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #387632
+		border = line
+		saved-params = "is-checked"
+		text = "Perk List"
+		command = "http://erashinobionline.wikia.com/wiki/Perks"
+		is-flat = true
+	elem "label14"
+		type = LABEL
+		pos = 8,88
+		size = 584x152
+		anchor1 = 1,15
+		anchor2 = 99,40
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #515151
+		border = line
+		saved-params = ""
+		text = "What 'Progress Logging' is a tool that you use to develop your character. With this tool you can log all your character's development towards a perk or technique. Basically, after you set up what you are working towards and have posted your emote, open this window up and paste the roleplay you just did into the text input below.\n\nThings you need to take into consideration:\n\n-Only request a check once you are confident on your logs. (AKA do not ask daily. It will probably decrease your chances)\n-Interactive roleplay is encouraged over solo roleplay.\n-Submit one roleplay at a time, any more is just clutter."
+		image-mode = tile
+		align = left
+		text-wrap = true
+	elem "label13"
+		type = LABEL
+		pos = 8,72
+		size = 584x16
+		anchor1 = 1,12
+		anchor2 = 99,15
+		text-color = #ffffff
+		background-color = #404040
+		border = line
+		saved-params = ""
+		text = "Progress Logging "
+		align = top
+	elem "button8"
+		type = BUTTON
+		pos = 528,24
+		size = 64x16
+		anchor1 = 88,4
+		anchor2 = 99,7
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #2c2c2c
+		border = line
+		saved-params = "is-checked"
+		text = "Change"
+		command = "change-rp-target"
+		is-flat = true
+	elem "Submit"
+		type = BUTTON
+		pos = 352,576
+		size = 240x16
+		anchor1 = 59,96
+		anchor2 = 99,99
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #753333
+		border = line
+		saved-params = "is-checked"
+		text = "Submit"
+		command = "rplog"
+		is-flat = true
+	elem "Last"
+		type = LABEL
+		pos = 8,56
+		size = 584x16
+		anchor1 = 1,9
+		anchor2 = 99,12
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #2c2c2c
+		border = line
+		saved-params = ""
+		text = "Last Submission:"
+		align = left
+	elem "Submission"
+		type = INPUT
+		pos = 8,240
+		size = 584x336
+		anchor1 = 1,40
+		anchor2 = 99,96
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #2c2c2c
+		border = sunken
+		saved-params = ""
+		multi-line = true
+		no-command = true
+	elem "Date"
+		type = LABEL
+		pos = 8,40
+		size = 584x16
+		anchor1 = 1,7
+		anchor2 = 99,9
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #2c2c2c
+		border = line
+		saved-params = ""
+		text = "Since:"
+		align = left
+	elem "Working"
+		type = LABEL
+		pos = 8,24
+		size = 520x16
+		anchor1 = 1,4
+		anchor2 = 88,7
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #2c2c2c
+		border = line
+		saved-params = ""
+		text = "You are working towards:"
+		align = left
+	elem "Close"
+		type = BUTTON
+		pos = 568,8
+		size = 24x16
+		anchor1 = 95,1
+		anchor2 = 99,4
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #851212
+		border = line
+		saved-params = "is-checked"
+		text = "X"
+		command = "RewardRPX"
+		is-flat = true
+	elem "label12"
+		type = LABEL
+		pos = 8,8
+		size = 560x16
+		anchor1 = 1,1
+		anchor2 = 95,4
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #404040
+		border = line
+		saved-params = ""
+		text = "Progress Logging"
+
+window "Who"
+	elem "Who"
+		type = MAIN
+		pos = 281,0
+		size = 210x480
+		anchor1 = none
+		anchor2 = none
+		background-color = #3a3a3a
+		is-visible = false
+		border = line
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Who"
+		statusbar = false
+	elem "Grid"
+		type = GRID
+		pos = 8,40
+		size = 192x432
+		anchor1 = 4,8
+		anchor2 = 95,98
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #484848
+		border = line
+		saved-params = ""
+		highlight-color = #000000
+	elem "label8"
+		type = LABEL
+		pos = 8,8
+		size = 192x24
+		anchor1 = 4,2
+		anchor2 = 95,7
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #3a3a3a
+		border = line
+		saved-params = ""
+		text = "Online Users"
+
+window "create"
+	elem "create"
+		type = MAIN
+		pos = 281,0
+		size = 599x553
+		anchor1 = none
+		anchor2 = none
+		background-color = #2c2c2c
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "creation"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+	elem "label24"
+		type = LABEL
+		pos = 354,80
+		size = 238x71
+		anchor1 = 59,14
+		anchor2 = 99,27
+		text-color = #e22929
+		background-color = #c6c2b3
+		border = line
+		saved-params = ""
+		text = "*This Game is a roleplaying game, just remember in roleplaying games. Your names cannot bare a title, for example, \"Lord Redfield\". Roleplay is about looking and seeing the world though your character's eyes.*"
+		text-wrap = true
+	elem "label23"
+		type = LABEL
+		pos = 327,104
+		size = 25x23
+		anchor1 = 55,19
+		anchor2 = 59,23
+		font-family = "Verdana"
+		text-color = #2c2c2c
+		background-color = #d8d6cb
+		border = line
+		saved-params = ""
+		text = ""
+	elem "label22"
+		type = LABEL
+		pos = 8,4
+		size = 584x76
+		anchor1 = 1,1
+		anchor2 = 99,14
+		background-color = none
+		is-transparent = true
+		saved-params = ""
+		text = ""
+	elem "label20"
+		type = LABEL
+		pos = 8,104
+		size = 320x23
+		anchor1 = 1,19
+		anchor2 = 55,23
+		font-family = "Verdana"
+		text-color = #2c2c2c
+		background-color = #d8d6cb
+		border = line
+		saved-params = ""
+		text = "Check this off, to register your family ---------------------->"
+		align = right
+	elem "label19"
+		type = LABEL
+		pos = 8,152
+		size = 224x34
+		anchor1 = 1,27
+		anchor2 = 39,34
+		background-color = #c6c2b3
+		border = line
+		saved-params = ""
+		text = ""
+	elem "label18"
+		type = LABEL
+		pos = 184,153
+		size = 32x32
+		anchor1 = 31,28
+		anchor2 = 36,33
+		background-color = #c6c2b3
+		saved-params = ""
+		text = ""
+	elem "label17"
+		type = LABEL
+		pos = 113,154
+		size = 32x28
+		anchor1 = 19,28
+		anchor2 = 24,33
+		background-color = #c6c2b3
+		saved-params = ""
+		text = ""
+	elem "label21"
+		type = LABEL
+		pos = 8,187
+		size = 584x181
+		anchor1 = 1,34
+		anchor2 = 99,67
+		background-color = #c6c2b3
+		is-transparent = true
+		border = line
+		saved-params = ""
+		text = ""
+	elem "IronTemple"
+		type = BUTTON
+		pos = 335,345
+		size = 15x14
+		anchor1 = 56,62
+		anchor2 = 58,65
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #2c2c2c
+		saved-params = "is-checked"
+		text = ""
+		command = "IronClick"
+		button-type = checkbox
+	elem "Okay"
+		type = BUTTON
+		pos = 8,529
+		size = 584x21
+		anchor1 = 1,96
+		anchor2 = 99,99
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #2c2c2c
+		background-color = #bcb7a5
+		border = line
+		saved-params = "is-checked"
+		text = "Submit"
+		command = "Finish"
+		is-flat = true
+	elem "Profiles"
+		type = LABEL
+		pos = 8,369
+		size = 584x18
+		anchor1 = 1,67
+		anchor2 = 99,70
+		font-family = "Verdana"
+		text-color = #2c2c2c
+		background-color = #d7d3c8
+		border = line
+		saved-params = ""
+		text = "Tell us about yourself"
+	elem "ClanName"
+		type = INPUT
+		pos = 8,128
+		size = 344x23
+		anchor1 = 1,23
+		anchor2 = 59,27
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #2c2c2c
+		background-color = #c6c2b3
+		is-visible = false
+		border = line
+		saved-params = ""
+		no-command = true
+	elem "Clan"
+		type = BUTTON
+		pos = 332,108
+		size = 15x15
+		anchor1 = 55,20
+		anchor2 = 58,22
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #2c2c2c
+		saved-params = "is-checked"
+		text = ""
+		command = "ClanClick"
+		button-type = checkbox
+	elem "Name"
+		type = INPUT
+		pos = 55,80
+		size = 297x23
+		anchor1 = 9,14
+		anchor2 = 59,19
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #2c2c2c
+		background-color = #c6c2b3
+		border = line
+		saved-params = ""
+		no-command = true
+	elem "Age"
+		type = INPUT
+		pos = 314,152
+		size = 278x34
+		anchor1 = 52,27
+		anchor2 = 99,34
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #2c2c2c
+		background-color = #c6c2b3
+		border = line
+		saved-params = ""
+		no-command = true
+	elem "Female"
+		type = BUTTON
+		pos = 169,162
+		size = 15x14
+		anchor1 = 28,29
+		anchor2 = 31,32
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #2c2c2c
+		saved-params = "is-checked"
+		text = ""
+		command = "FemaleClick"
+		button-type = checkbox
+	elem "Male"
+		type = BUTTON
+		pos = 97,162
+		size = 15x14
+		anchor1 = 16,29
+		anchor2 = 19,32
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #2c2c2c
+		saved-params = "is-checked"
+		text = ""
+		command = "MaleClick"
+		button-type = checkbox
+	elem "Kirigakure"
+		type = BUTTON
+		pos = 498,314
+		size = 15x14
+		anchor1 = 83,57
+		anchor2 = 86,59
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #2c2c2c
+		saved-params = "is-checked"
+		text = ""
+		command = "KiriClick"
+		button-type = checkbox
+	elem "Sunagakure"
+		type = BUTTON
+		pos = 145,318
+		size = 15x14
+		anchor1 = 24,58
+		anchor2 = 27,60
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #2c2c2c
+		saved-params = "is-checked"
+		text = ""
+		command = "SunaClick"
+		button-type = checkbox
+	elem "Konohagakure"
+		type = BUTTON
+		pos = 371,258
+		size = 15x14
+		anchor1 = 62,47
+		anchor2 = 64,49
+		font-family = "Verdana"
+		text-color = #2c2c2c
+		background-color = #2c2c2c
+		saved-params = "is-checked"
+		text = ""
+		command = "KonohaClick"
+		button-type = checkbox
+	elem "label11"
+		type = LABEL
+		pos = 16,193
+		size = 568x16
+		anchor1 = 3,35
+		anchor2 = 97,38
+		font-family = "Verdana"
+		text-color = #2c2c2c
+		background-color = #c6c1b3
+		border = line
+		saved-params = ""
+		text = "Where are you from?"
+	elem "label10"
+		type = LABEL
+		pos = 12,160
+		size = 76x18
+		anchor1 = 2,29
+		anchor2 = 15,32
+		font-family = "Verdana"
+		text-color = #2c2c2c
+		background-color = #d5d2c6
+		border = line
+		saved-params = ""
+		text = "Sex"
+	elem "label9"
+		type = LABEL
+		pos = 234,152
+		size = 81x34
+		anchor1 = 39,27
+		anchor2 = 53,34
+		font-family = "Verdana"
+		text-color = #2c2c2c
+		background-color = #d6d3c9
+		border = line
+		saved-params = ""
+		text = "Age"
+	elem "Name1"
+		type = LABEL
+		pos = 8,80
+		size = 48x23
+		anchor1 = 1,14
+		anchor2 = 9,19
+		font-family = "Verdana"
+		text-color = #2c2c2c
+		background-color = #d8d6cb
+		border = line
+		saved-params = ""
+		text = "Name"
+	elem "Profile"
+		type = INPUT
+		pos = 8,388
+		size = 584x140
+		anchor1 = 1,70
+		anchor2 = 99,95
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #2c2c2c
+		background-color = #c9c7b8
+		border = line
+		saved-params = ""
+		multi-line = true
+		no-command = true
+
+window "default"
+	elem "default"
+		type = MAIN
+		pos = 281,0
+		size = 1024x670
+		anchor1 = none
+		anchor2 = none
+		background-color = #131313
+		is-default = true
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Era of the Shinobi"
+		statusbar = false
+		image-mode = tile
+		macro = "macro"
+		menu = "menu"
+	elem "Help"
+		type = BUTTON
+		pos = 296,560
+		size = 40x16
+		anchor1 = 29,70
+		anchor2 = 33,72
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #2c2c2c
+		background-color = #80ff80
+		border = line
+		saved-params = "is-checked"
+		text = "Talk+"
+		command = "Help"
+		is-flat = true
+	elem "button2"
+		type = BUTTON
+		pos = 296,576
+		size = 728x16
+		anchor1 = 29,72
+		anchor2 = 100,74
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #1b1b1b
+		border = line
+		saved-params = "is-checked"
+		text = "Roleplay"
+		command = "Roleplay"
+		is-flat = true
+	elem "saybar"
+		type = INPUT
+		pos = 336,560
+		size = 688x17
+		anchor1 = 33,70
+		anchor2 = 100,72
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #666666
+		border = line
+		saved-params = ""
+		command = "Say"
+	elem "label25"
+		type = LABEL
+		pos = 0,768
+		size = 32x16
+		anchor1 = 0,96
+		anchor2 = 3,98
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #2c2c2c
+		border = line
+		saved-params = ""
+		text = "OOC"
+	elem "label16"
+		type = LABEL
+		pos = 0,560
+		size = 296x51
+		anchor1 = 0,70
+		anchor2 = 29,76
+		background-color = #2c2c2c
+		saved-params = ""
+		text = ""
+	elem "button15"
+		type = BUTTON
+		pos = 240,561
+		size = 41x48
+		anchor1 = 23,70
+		anchor2 = 27,76
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #2c2c2c
+		saved-params = "is-checked"
+		text = ""
+		command = "http://www.byond.com/games/Seventh/EraofShinobi"
+		is-flat = true
+	elem "label1"
+		type = LABEL
+		pos = 1,561
+		size = 43x48
+		anchor1 = 0,70
+		anchor2 = 4,76
+		background-color = #2c2c2c
+		saved-params = ""
+		text = ""
+	elem "label5"
+		type = LABEL
+		pos = 0,784
+		size = 32x16
+		anchor1 = 0,98
+		anchor2 = 3,100
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #2c2c2c
+		border = line
+		saved-params = ""
+		text = "CMD"
+	elem "input3"
+		type = INPUT
+		pos = 32,784
+		size = 264x16
+		anchor1 = 3,98
+		anchor2 = 29,100
+		font-family = "Calibri"
+		text-color = #ffffff
+		background-color = #8f8f8f
+		is-default = true
+		border = line
+		saved-params = ""
+	elem "button10"
+		type = BUTTON
+		pos = 80,611
+		size = 216x17
+		anchor1 = 8,76
+		anchor2 = 29,78
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #851212
+		border = line
+		saved-params = "is-checked"
+		text = "Progress Log"
+		command = "RewardRP"
+		is-flat = true
+	elem "button9"
+		type = BUTTON
+		pos = 0,611
+		size = 80x17
+		anchor1 = 0,76
+		anchor2 = 8,78
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #303030
+		border = line
+		saved-params = "is-checked"
+		text = "Options"
+		command = "Options"
+		is-flat = true
+	elem "button6"
+		type = BUTTON
+		pos = 196,561
+		size = 44x48
+		anchor1 = 19,70
+		anchor2 = 23,76
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #2c2c2c
+		saved-params = "is-checked"
+		text = ""
+		command = "http://erashinobionline.wikia.com"
+		is-flat = true
+	elem "button4"
+		type = BUTTON
+		pos = 148,561
+		size = 44x48
+		anchor1 = 14,70
+		anchor2 = 19,76
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #2c2c2c
+		saved-params = "is-checked"
+		text = ""
+		command = "http://eotsroleplay.findforum.net"
+		is-flat = true
+	elem "ICout"
+		type = OUTPUT
+		pos = 296,591
+		size = 728x209
+		anchor1 = 29,74
+		anchor2 = 100,100
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #000000
+		border = line
+		saved-params = "max-lines"
+		link-color = #0080ff
+		visited-color = #808040
+	elem "OOCout"
+		type = OUTPUT
+		pos = 0,627
+		size = 296x141
+		anchor1 = 0,78
+		anchor2 = 29,96
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #000000
+		is-default = true
+		border = line
+		saved-params = "max-lines"
+		link-color = #c0c0c0
+		visited-color = #808040
+	elem "input1"
+		type = INPUT
+		pos = 32,768
+		size = 264x16
+		anchor1 = 3,96
+		anchor2 = 29,98
+		font-family = "Calibri"
+		text-color = #ffffff
+		background-color = #666666
+		border = line
+		saved-params = ""
+		command = "OOC"
+	elem "child1"
+		type = CHILD
+		pos = 0,0
+		size = 1024x560
+		anchor1 = 0,0
+		anchor2 = 100,70
+		background-color = #666666
+		border = line
+		saved-params = "splitter"
+		left = "Map"
+		right = "Info"
+		is-vert = true
+		splitter = 70
+	elem "Startup"
+		type = CHILD
+		pos = 0,0
+		size = 1024x801
+		anchor1 = 0,0
+		anchor2 = 100,100
+		background-color = none
+		saved-params = "splitter"
+		left = "startup"
+		is-vert = false
+	elem "button3"
+		type = BUTTON
+		pos = 550,823
+		size = 473x29
+		anchor1 = 54,100
+		anchor2 = 100,100
+		font-family = "Calibri"
+		text-color = #ffffff
+		background-color = #3b3b3b
+		border = line
+		saved-params = "is-checked"
+		text = "Roleplay"
+		command = "Roleplay"
+	elem "button1"
+		type = BUTTON
+		pos = 8,-32
+		size = 60x20
+		anchor1 = none
+		anchor2 = none
+		background-color = none
+		saved-params = "is-checked"
+		text = ""
+		command = ""
+	elem "input2"
+		type = INPUT
+		pos = 0,823
+		size = 552x29
+		anchor1 = 0,100
+		anchor2 = 54,100
+		font-family = "Calibri"
+		text-color = #ffffff
+		background-color = #666666
+		border = sunken
+		saved-params = ""
+
+window "skalert"
+	elem "skalert"
+		type = MAIN
+		pos = 281,0
+		size = 508x693
+		anchor1 = none
+		anchor2 = none
+		background-color = #3b3b3b
+		is-visible = false
+		border = line
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+	elem "skalert3"
+		type = BUTTON
+		pos = 333,664
+		size = 169x25
+		anchor1 = 66,96
+		anchor2 = 99,99
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #3b3b3b
+		border = line
+		saved-params = "is-checked"
+		text = ""
+		command = ".skalert 3"
+		is-flat = true
+	elem "skalert1"
+		type = BUTTON
+		pos = 166,664
+		size = 168x25
+		anchor1 = 33,96
+		anchor2 = 66,99
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #3b3b3b
+		border = line
+		saved-params = "is-checked"
+		text = ""
+		command = ".skalert 1"
+		is-flat = true
+	elem "skalert2"
+		type = BUTTON
+		pos = 6,664
+		size = 161x25
+		anchor1 = 1,96
+		anchor2 = 33,99
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #3b3b3b
+		border = line
+		saved-params = "is-checked"
+		text = ""
+		command = ".skalert 2"
+		is-flat = true
+	elem "skalert_out"
+		type = OUTPUT
+		pos = 6,6
+		size = 496x654
+		anchor1 = 1,1
+		anchor2 = 99,95
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #2c2c2c
+		border = line
+		saved-params = "max-lines"
+		enable-http-images = true
+
+window "skinput22"
+	elem "skinput22"
+		type = MAIN
+		pos = 281,0
+		size = 640x124
+		anchor1 = none
+		anchor2 = none
+		background-color = #3b3b3b
+		is-visible = false
+		border = line
+		saved-params = "pos;size;is-minimized;is-maximized"
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+	elem "skinputbar1"
+		type = BUTTON
+		pos = 543,104
+		size = 97x15
+		anchor1 = 85,77
+		anchor2 = 100,96
+		font-family = "Fixedsys"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #2c2c2c
+		border = line
+		saved-params = "is-checked"
+		text = "Ok"
+		command = ".skinputbar"
+		is-flat = true
+	elem "skinputbar"
+		type = INPUT
+		pos = 0,104
+		size = 544x15
+		anchor1 = 0,77
+		anchor2 = 85,96
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #1f1f1f
+		border = line
+		saved-params = ""
+		no-command = true
+	elem "skinput2_out"
+		type = OUTPUT
+		pos = 0,8
+		size = 640x96
+		anchor1 = 0,6
+		anchor2 = 100,77
+		text-color = #ffffff
+		background-color = #2c2c2c
+		border = line
+		saved-params = "max-lines"
+
+window "skinputbig"
+	elem "skinputbig"
+		type = MAIN
+		pos = 281,0
+		size = 648x379
+		anchor1 = none
+		anchor2 = none
+		background-color = #3b3b3b
+		is-visible = false
+		border = line
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+	elem "skinputbar2"
+		type = BUTTON
+		pos = 0,361
+		size = 648x15
+		anchor1 = 40,91
+		anchor2 = 56,99
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #2c2c2c
+		border = line
+		saved-params = "is-checked"
+		text = "Ok"
+		command = ".skinputbat 1"
+		is-flat = true
+	elem "skinputbar"
+		type = INPUT
+		pos = 0,24
+		size = 648x336
+		anchor1 = 0,6
+		anchor2 = 100,91
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #1f1f1f
+		border = line
+		saved-params = ""
+		multi-line = true
+		no-command = true
+	elem "skinput2_out"
+		type = OUTPUT
+		pos = 0,0
+		size = 648x25
+		anchor1 = 0,0
+		anchor2 = 100,7
+		text-color = #ffffff
+		background-color = #2c2c2c
+		border = line
+		saved-params = "max-lines"
+
+window "spy"
+	elem "spy"
+		type = MAIN
+		pos = 281,0
+		size = 640x480
+		anchor1 = none
+		anchor2 = none
+		background-color = #1f1f1f
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Roleplay Spy"
+		titlebar = false
+		statusbar = false
+		can-minimize = false
+		icon = 'ICON.png'
+	elem "rp"
+		type = OUTPUT
+		pos = 8,8
+		size = 624x464
+		anchor1 = 1,2
+		anchor2 = 99,98
+		font-family = "Calibri"
+		text-color = #ffffff
+		background-color = #000000
+		saved-params = "max-lines"
+		link-color = #ffffff
+		visited-color = #0080ff
+
+window "startup"
+	elem "startup"
+		type = MAIN
+		pos = 281,0
+		size = 600x600
+		anchor1 = none
+		anchor2 = none
+		is-default = true
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Era Of The Shinobi"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+		icon = 'C:\\Users\\btgam\\Downloads\\images (5).jpg'
+		image = 'Sh\\suna15.png'
+		image-mode = center
+	elem "Konoha"
+		type = LABEL
+		pos = 0,0
+		size = 600x600
+		anchor1 = 0,0
+		anchor2 = 100,100
+		is-visible = false
+		saved-params = ""
+		text = ""
+		image = 'Sh\\kono15.png'
+	elem "Kirigakure"
+		type = LABEL
+		pos = 0,0
+		size = 600x600
+		anchor1 = 0,0
+		anchor2 = 100,100
+		is-visible = false
+		saved-params = ""
+		text = ""
+		image = 'Sh\\kiri15.png'
+	elem "label15"
+		type = LABEL
+		pos = 4,528
+		size = 152x16
+		anchor1 = none
+		anchor2 = none
+		font-family = "Verdana"
+		font-size = 8
+		text-color = #ffffff
+		background-color = #262626
+		saved-params = ""
+		text = "Era of the Shinobi V.1.6"
+	elem "button7"
+		type = BUTTON
+		pos = 542,528
+		size = 48x70
+		anchor1 = 77,39
+		anchor2 = 83,41
+		text-color = #ffffff
+		background-color = #131313
+		saved-params = "is-checked"
+		text = ""
+		image = 'Sh\\15button3.png'
+		command = "http://www.byond.com/games/Seventh/EraofShinobi"
+	elem "button12"
+		type = BUTTON
+		pos = 441,528
+		size = 48x70
+		anchor1 = 77,20
+		anchor2 = 84,23
+		text-color = #ffffff
+		background-color = #a4a4a4
+		saved-params = "is-checked"
+		text = ""
+		image = 'Sh\\15button.png'
+		command = "begin"
+	elem "button13"
+		type = BUTTON
+		pos = 491,528
+		size = 48x70
+		anchor1 = 77,24
+		anchor2 = 87,26
+		text-color = #ffffff
+		background-color = #131313
+		saved-params = "is-checked"
+		text = ""
+		image = 'Sh\\15button1.png'
+		command = "contin"
+	elem "Creation"
+		type = CHILD
+		pos = 0,0
+		size = 600x600
+		anchor1 = 0,0
+		anchor2 = 100,100
+		is-visible = false
+		saved-params = "splitter"
+		left = "create"
+		is-vert = false
+
+window "yutput"
+	elem "yutput"
+		type = MAIN
+		pos = 281,0
+		size = 640x393
+		anchor1 = none
+		anchor2 = none
+		background-color = #0b0b0b
+		is-visible = false
+		border = line
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+	elem "title"
+		type = LABEL
+		pos = 0,8
+		size = 640x40
+		anchor1 = 0,0
+		anchor2 = 100,13
+		text-color = #ffffff
+		background-color = #3e0909
+		border = sunken
+		saved-params = ""
+		text = ""
+	elem "message"
+		type = OUTPUT
+		pos = 0,48
+		size = 640x56
+		anchor1 = 0,13
+		anchor2 = 100,42
+		text-color = #ffffff
+		background-color = #5e0000
+		border = line
+		saved-params = "max-lines"
+	elem "grid"
+		type = GRID
+		pos = 0,104
+		size = 640x288
+		anchor1 = 0,42
+		anchor2 = 100,100
+		text-color = #ffffff
+		background-color = #6f0000
+		border = line
+		saved-params = ""
+		show-lines = horizontal
+		highlight-color = #000000
+
